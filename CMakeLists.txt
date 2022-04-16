@@ -27,14 +27,11 @@ if(WIN32)
 		IMPORTED_LOCATION ${CMAKE_CURRENT_BINARY_DIR}/gmplib/lib/gmp.dll
 		IMPORTED_IMPLIB ${CMAKE_CURRENT_BINARY_DIR}/gmplib/lib/gmp.lib
 	)
-
-	set(GMP_LIBRARIES ${CMAKE_CURRENT_BINARY_DIR}/gmplib/lib/gmp.dll)
 else()
 	set_target_properties(
 		gmplib PROPERTIES
 		IMPORTED_LOCATION ${CMAKE_CURRENT_BINARY_DIR}/gmplib/lib/libgmp.so
 	)
-
-	set(GMP_LIBRARIES ${CMAKE_CURRENT_BINARY_DIR}/gmplib/lib/libgmp.so)
 endif()
 
+set(GMP_LIBRARIES gmplib)
