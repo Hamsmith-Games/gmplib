@@ -1,0 +1,4 @@
+# Build remnants
+*.o
+build
+cmake-build-*
