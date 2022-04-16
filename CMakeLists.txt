@@ -10,7 +10,7 @@ ProcessorCount(N)
 ExternalProject_Add(
 	gmplib_ext
 	SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}
-	CONFIGURE_COMMAND ${CMAKE_CURRENT_LIST_DIR}/configure --disable-static --prefix=${CMAKE_CURRENT_BINARY_DIR}/gmplib
+	CONFIGURE_COMMAND ${CMAKE_CURRENT_LIST_DIR}/configure --disable-static --enable-cxx --prefix=${CMAKE_CURRENT_BINARY_DIR}/gmplib
 	PREFIX ${CMAKE_CURRENT_BINARY_DIR}/gmplib
 	BUILD_COMMAND make -j${N}
 )

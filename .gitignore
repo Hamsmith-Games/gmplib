@@ -1,3 +1,6 @@
+# Editor/Desktop files
+*.kate-swp
+
 # Build remnants
 *.o
 build
