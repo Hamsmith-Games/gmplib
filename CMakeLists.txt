@@ -19,8 +19,8 @@ add_library(gmplib SHARED IMPORTED)
 
 add_dependencies(gmplib gmplib_ext)
 
-set(GMP_INCLUDE_DIRS ${CMAKE_CURRENT_BINARY_DIR}/gmplib/include CACHE STRING "GNU MP include dirs")
-set(GMP_LIBRARIES gmplib CACHE STRING "GNU MP Libraries")
+set(GMP_INCLUDE_DIRS ${CMAKE_CURRENT_BINARY_DIR}/gmplib/include CACHE STRING "GNU MP include dirs"  FORCE)
+set(GMP_LIBRARIES gmplib CACHE STRING "GNU MP Libraries" FORCE)
 
 target_include_directories(gmplib INTERFACE ${GMP_INCLUDE_DIRS})
 
