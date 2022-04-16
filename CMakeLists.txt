@@ -15,9 +15,12 @@ ExternalProject_Add(
 	BUILD_COMMAND make -j${N}
 )
 
-set(GMP_INCLUDE_DIRS ${CMAKE_CURRENT_BINARY_DIR}/gmplib/include)
-
 add_library(gmplib SHARED IMPORTED)
+
+add_dependencies(gmplib gmplib_ext)
+
+set(GMP_INCLUDE_DIRS ${CMAKE_CURRENT_BINARY_DIR}/gmplib/include CACHE STRING "GNU MP include dirs")
+set(GMP_LIBRARIES gmplib CACHE STRING "GNU MP Libraries")
 
 target_include_directories(gmplib INTERFACE ${GMP_INCLUDE_DIRS})
 
@@ -33,5 +36,3 @@ else()
 		IMPORTED_LOCATION ${CMAKE_CURRENT_BINARY_DIR}/gmplib/lib/libgmp.so
 	)
 endif()
-
-set(GMP_LIBRARIES gmplib)
